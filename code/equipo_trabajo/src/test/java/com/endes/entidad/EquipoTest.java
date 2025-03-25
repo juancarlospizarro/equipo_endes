@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 class EquipoTest {
 
     private Equipo equipo;
+    Desarrollador desarrollador1, desarrollador2, desarrollador3;
 
     @BeforeEach
     void setUp() throws Exception {
@@ -67,13 +68,20 @@ class EquipoTest {
      * - Comprueba que la lista tiene el tamaño correcto.
      * - Verifica que los valores de productividad son los esperados.
      */
-    /*
+    
     @Test
     @DisplayName("Listar las productividades del equipo")
     void testListarProductividades() {
-        // Tu código aquí
+        int productividadesEsperadas = 3;
+        desarrollador1 = new Desarrollador("29292929T", "Juan", 1500.0, "Python");
+		desarrollador2 = new Desarrollador("29392629T", "Pepe", 1500.0, "Java");
+		desarrollador3 = new Desarrollador("29292000T", "Maria", 1500.0, "C");
+		equipo.añadirMiembro(desarrollador1);
+		equipo.añadirMiembro(desarrollador2);
+		equipo.añadirMiembro(desarrollador3);
+        assertEquals(productividadesEsperadas, equipo.listarProductividades().size(), "El numero de productividades obtenido no coincide con el esperado");
     }
-    */
+    
     /**
      * Verifica que un equipo nuevo se inicializa con la lista de miembros vacía.
      */
@@ -88,10 +96,10 @@ class EquipoTest {
      * Verifica que no se puede añadir un miembro null al equipo.
      * Debe lanzarse IllegalArgumentException con el mensaje adecuado.
      */
-    /*  @Test
+    @Test
     @DisplayName("No se permite añadir un miembro null al equipo")
     void testAñadirMiembroNull() {
-          // Tu código aquí
+          
     }
-    */
+    
 }
