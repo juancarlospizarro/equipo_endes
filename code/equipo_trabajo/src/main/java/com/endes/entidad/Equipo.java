@@ -24,7 +24,22 @@ public class Equipo {
         if (p == null) {
             throw new IllegalArgumentException("El miembro no puede ser nulo.");
         }
-        miembros.add(p);
+        List<String> miembrosDNI = new ArrayList<>();
+        boolean existe = false;
+        for(int i = 0; i < miembros.size(); i++) {
+        	miembrosDNI.add(miembros.get(i).getDni());
+        }
+        for(int i = 0; i < miembrosDNI.size(); i++) {
+        	if(p.getDni() == miembrosDNI.get(i)) {
+        		existe = true;
+        	}
+        }
+        if(existe) {
+        	throw new IllegalArgumentException("El DNI introducido ya existe");
+        }else {
+        	miembros.add(p);
+        }
+        
     }
 
     /**
